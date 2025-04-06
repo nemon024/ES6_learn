@@ -1,4 +1,4 @@
-/*varibles 
+/*VARIBLES 
 there are 2 typees of varibles 
 1.let:
 @Part of ES6
@@ -12,7 +12,7 @@ there are 2 typees of varibles
 */
 
 
-/* function
+/* FUNCTION
 3 types 
 basic fat arrow
 let a=()=>{} 
@@ -24,3 +24,77 @@ fat arrow function with no return
 let a = ()=> 122
 console.log(a());
 result will be 122*/
+
+/*TEMPLATE
+using of ``(BACKTICKS) instead of "" ,'' bcz is ma ${} use karka function kara sakta hai use */
+
+/* DEFAULT PARAMETER
+jaab fucntion call ma koi parameter na de jaya but u want the result should not be undefined then you use default parameter , such as:
+function avc(prm=0)//yaha perm=0 jis se result ma undefined na aaya{
+console.log(prm);
+}
+
+avc(12);
+avc();is ma koi value nahi de hai
+result will be :
+12 
+0
+
+2 example:
+function abcd(a=0,b=0,c=0){
+console.log(a,b,c);
+}
+abcd(1,2,3);
+abcd(1,2,2);
+abcd(2)
+answer will be :
+1,2,3
+1,2,2
+2,0,0
+*/
+
+/*REST AND SPREAD
+terko copy karna hai
+but tu use ya karega 
+let a = [1,2,3,4,5,6,6,7,7];
+let b = a;
+console.log(a);
+console.log(b);
+result will be same the modification in a will be automatically change in b and vise versa
+
+...spread/rest
+
+Spread use hota hai copy ya fir us location par kisi aur ki values bikherna ke liya or merging ka liya bhi
+
+let a =[1,2,3,4,5,6,7,8];
+let b = [...a];
+b.push(9);
+console.log(a);
+console.log(b);
+
+let a = [1, 2];
+let b = [3, 4];
+let c = [...a, ...b];
+console.log(c); // [1, 2, 3, 4]
+
+rest use hota hai jab aapko bache huye values ek variable mei daalne ko
+function abcd(a,b,c,...d){
+console.log(a,b,c,d)
+}
+abcd(1,2,3,4,5,6,7,8)
+
+let nested = [[1, 2], [3, 4], [5]];
+let flat = nested.reduce((acc, curr) => acc.concat(curr), []);
+console.log(flat); // Output: [1, 2, 3, 4, 5]
+
+
+*/
+
+
+/* */
+
+/* */
+
+/* */
+
+/* */
