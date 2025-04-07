@@ -165,7 +165,27 @@ abcde();
 */
 
 
-/* */
+/*TRY AND CHECK
+js ek interpreted language hai jo line by line chlti hai but koi code ma aagar  error aaya ho tho aaga ka code nahi chelga but ko fix karna ka liya try n catch ka use karta hai jis aagar vo line pa error aaya tho aaga ka code tho chla or error bhi bata de
+example:
+console.log("hey");
+console.log(hey) //ya ek variable ko dudh raha hai jo Exist he nah karta hai taab aaga ka code(naman ) bhi print nahi hoga 
+console.log("naman");
+isko fix karna ka liya
+
+sol:
+console.log("hey");
+try{
+console.log(hey);
+}
+catch(err){
+console.log(err);
+}
+
+console.log("naman")
+
+
+*/
 
 /* */
 
