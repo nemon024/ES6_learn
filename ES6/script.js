@@ -86,12 +86,19 @@ abcd(1,2,3,4,5,6,7,8)
 let nested = [[1, 2], [3, 4], [5]];
 let flat = nested.reduce((acc, curr) => acc.concat(curr), []);
 console.log(flat); // Output: [1, 2, 3, 4, 5]
-
-
 */
 
 
-/* */
+/*DESTRUCTURING: arrays and obj se data baahar nikaalna in variables 
+let obj ={name:"naman", 
+  age:18};
+let {age}= obj;
+console.log(age);
+
+let a=[1,2,3];
+let[b,,c]=a;
+*/
+
 
 /* */
 
