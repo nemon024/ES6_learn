@@ -100,7 +100,45 @@ let[b,,c]=a;
 */
 
 
-/* */
+/*Promises
+let ans= new Promise((res,rej)=>{
+  if(false){
+  return res();
+  }
+  else {
+  return rej();}
+  })
+
+  ans
+  .then(()=>{
+    console.log("resolve ho gya the");
+  })
+
+  .catch(()=>{
+    console.log("reject ho gye the");
+    
+
+let ans = new Promise((res, rej) => {
+  let n = Math.floor(Math.random()*10);
+  if (n < 5) {
+    return res();
+  }
+  else {
+    return rej();
+  }
+})
+
+ans.then(()=>{
+  console.log("below");
+})
+.catch(()=>{
+  console.log("above");
+})
+  })
+
+*/
+
+
 
 /* */
 
