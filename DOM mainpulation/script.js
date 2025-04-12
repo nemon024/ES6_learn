@@ -8,16 +8,86 @@
 3.Selecting elements using DOM
 
   1.getElementById()
+  <div>
+      <p id="message">JavaScript DOM</p>
+  </div>
+
+   let msg = document.getElementById("message");
+      console.log(msg);
+
+
   2.getElementByName()
+  <input type="radio" name="language" value="JavaScript">
+  <input type="radio" name="language" value="python">
+
+  let btn= document.getElementsByName("language");
+  console.log(btn)
+
+
   3.getElementByTagName()
+  <h1>first heading</h1>
+  <h1>Second heading</h1>
+  <h1>third heading</h1>
+  <h1>fourth heading</h1>
+
+  let heading = document.getElementsByTagName("h1");
+  console.log(heading);
+
+  
   4.getElementByClassName()
+   <div>
+    <h1 class="message">first heading</h1>
+    <div id="container">
+      <h1 class="message">second heading</h1>
+      <h1 class="message">third heading</h1>
+    </div>
+   
+  </div>
+
+  let cont = document.getElementById("container");
+  let msg = cont.getElementsByClassName("message");
+  console.log(msg)
+    
+    
   5.querySelector() and querySelectorAll()
   
 4.Traversing elements
 
   1.selecting parent element
+   <div class="title">
+      <p class="text">Welcome to naman</p>
+    </div>
+
+    let txt = document.querySelector(".text");
+    console.log(txt.parentNode);
+    //output: <div class="title">...</div>
+
+
   2.Selecting child element
+   <div class="title">
+    <p>Wlc to comp 1</p>
+    <p>wlc to comp 2</p>
+    <p>wlc to comp 3</p>
+    <p>wlc to comp 4</p>
+   </div>
+
+    let parent = document.querySelector(".title")
+    console.log(parent.lastElementChild);//for specific child
+    console.log(parent.childNodes);//for all child node
+
+
   3.Selecting Sibling elements
+   <div class="title">
+    <p>Wlc to comp 1</p>
+    <p class="second">wlc to comp 2</p>
+    <p>wlc to comp 3</p>
+    <p>wlc to comp 4</p>
+   </div>
+
+  let second = document.querySelector(".second")
+  console.log(second.nextElementSibling);
+  console.log(second.previousElementSibling);
+  
   
 5.Manipulating HTML elements
   
