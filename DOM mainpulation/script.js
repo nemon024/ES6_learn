@@ -8,45 +8,44 @@
 3.Selecting elements using DOM
 
   1.getElementById()
-  <div>
+    <div>
       <p id="message">JavaScript DOM</p>
-  </div>
+    </div>
 
-   let msg = document.getElementById("message");
-      console.log(msg);
+    let msg = document.getElementById("message");
+    console.log(msg);
 
 
   2.getElementByName()
-  <input type="radio" name="language" value="JavaScript">
-  <input type="radio" name="language" value="python">
+    <input type="radio" name="language" value="JavaScript">
+    <input type="radio" name="language" value="python">
 
-  let btn= document.getElementsByName("language");
-  console.log(btn)
+    let btn= document.getElementsByName("language");
+    console.log(btn)
 
 
   3.getElementByTagName()
-  <h1>first heading</h1>
-  <h1>Second heading</h1>
-  <h1>third heading</h1>
-  <h1>fourth heading</h1>
+    <h1>first heading</h1>
+    <h1>Second heading</h1>
+    <h1>third heading</h1>
+    <h1>fourth heading</h1>
 
-  let heading = document.getElementsByTagName("h1");
-  console.log(heading);
+     let heading = document.getElementsByTagName("h1");
+    console.log(heading);
 
   
   4.getElementByClassName()
-   <div>
-    <h1 class="message">first heading</h1>
-    <div id="container">
-      <h1 class="message">second heading</h1>
-      <h1 class="message">third heading</h1>
+    <div>
+      <h1 class="message">first heading</h1>
+      <div id="container">
+        <h1 class="message">second heading</h1>
+        <h1 class="message">third heading</h1>
+      </div>
     </div>
-   
-  </div>
 
-  let cont = document.getElementById("container");
-  let msg = cont.getElementsByClassName("message");
-  console.log(msg)
+    let cont = document.getElementById("container");
+    let msg = cont.getElementsByClassName("message");
+    console.log(msg)
     
     
   5.querySelector() and querySelectorAll()
@@ -84,25 +83,134 @@
     <p>wlc to comp 4</p>
    </div>
 
-  let second = document.querySelector(".second")
-  console.log(second.nextElementSibling);
-  console.log(second.previousElementSibling);
+    let second = document.querySelector(".second")
+    console.log(second.nextElementSibling);
+    console.log(second.previousElementSibling);
   
   
 5.Manipulating HTML elements
   
   1.createElement()
+    let div = document.createElement("div");
+    div.innerHTML="<p>Welcome to dont know</p>"
+    document.body.appendChild(div);// add element on webpage
+    div.className ="title"; //to add class on the div
+    console.log(div);
+
   2.appendChild()
+    use appendChild() method to add a node to the end of the list of child nodes of a specified parent node.
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+      <li>Project</li>
+    </ul>
+
+    let menu = document.getElementById("menu");
+    let list = document.createElement("li");
+    list.innerHTML="Contact";
+    menu.appendChild(list);//add end of the ul list
+   
   3.textContent
+   <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+      <li style="display:none">Project</li>
+    </ul>
+
+    let menu = document.getElementById("menu");
+    console.log(menu.textContent);
+    //output:  Home  about  blog   Project
+
+    console.log(menu.innerText);
+    // output: Home  about  blog
+      
+    menu.textContent="hello!"; //replace all the exist code and write only given text
+
   4.innerHTML
+    let menu= document.getElementById('menu')
+    menu.innerHTML="<h1>Hello!</h1>"
+    //it also replace the exist code and rewrite the given code
+
+
+  4.5.Difference Between innerHTML and TextContent
+    innerHTML:Use for adding or modifying HTML structure.
+    Slower (parses HTML).
+
+    TextContent:
+    Use for working with plain text.
+    Faster (no parsing).
+
   5.after()
-  6.append()
+    we can use after() method to insert one or more nodes after the element.
+    //syntax: parentClass/Id.after(str1,str2...)
+    let menu= document.getElementById('menu')
+    let str1 = document.createElement("div");
+    str1.innerHTML="hello!"
+    menu.after(str1);
+
+  6.append()  
+    let menu= document.getElementById('menu')
+    let str1 = document.createElement('li');
+    let str2 = document.createElement('li');
+    str1.innerHTML ="yo"
+    str2.innerHTML = "honney singh"
+    menu.append(str1,str2); 
+    
+  6.5.Difference between after() and append()
+    after():
+    Inserts content outside, after the element.
+    As the next sibling of the element.
+    Add content outside an element.
+    Supported in modern browsers (not IE).
+
+    append():
+    Inserts content inside the element.
+    As the last child of the element.
+    Add content within an element.
+    Supported in all modern browsers.
+
   7.prepend()
+    let menu = document.getElementById("menu");
+    let str1= document.createElement('li')
+    let str2 = document.createElement('li')
+    str1.textContent="hello"
+    str2.textContent='world'
+    //syntax: parentNode.prepend(newNodes);
+    menu.prepend(str1,str2);
+
   8.insertAdjacentHTML()
+    let menu = document.getElementById('menu')
+    menu.insertAdjacentHTML("beforeend","<li>contact</li>")
+    menu.insertAdjacentHTML("afterbegin","<li>contact</li>")
+
   9.replaceChild()
+    let menu = document.getElementById('menu')
+    // syntax: parentNode.replaceChild(newChild,oldChild);
+    let newChild = document.createElement('li')
+    newChild.textContent='Contact'
+    menu.replaceChild(newChild , menu.children[0]);
+
   10.cloneNode()
+    let menu = document.getElementById('menu')
+    // Syntax: let newNode = originalNode.cloneNode();
+    let newNode = menu.cloneNode(true);//default ma false rhta hai. output: ul#menu
+    console.log(newNode);//clone the parent and child element bcz its true
+
   11.removeChild()
+  let menu = document.getElementById('menu')
+    // syntax: parentNode.removeChild(childNode)
+    menu.removeChild(menu.lastElementChild)//this will remove Project li not the blog
+    menu.removeChild(menu.firstElementChild)
+
   12.insertBefore()
+    use insertBefore() method to insert a new node before an existing node as a child node of a parent node.
+    let menu = document.getElementById('menu')
+    // syntax: parentNode.insertBefore(newNode, existingNode);
+    let str1 = document.createElement('li');
+    str1.textContent='hello'
+    menu.insertBefore(str1 ,menu.firstElementChild)
   
 6.Attribute methods
 

@@ -6,10 +6,20 @@
     <title>Document</title>
   </head>
   <body>
-  
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+      <li style="display:none">Project</li>
+    </ul>
 
-  <script>
-   
-  </script>
+    <script>
+      let menu = document.getElementById('menu')
+      // syntax: parentNode.insertBefore(newNode, existingNode);
+      let str1 = document.createElement('li');
+      str1.textContent='hello'
+      menu.insertBefore(str1 ,menu.firstElementChild)
+    
+    </script>
   </body>
 </html>
