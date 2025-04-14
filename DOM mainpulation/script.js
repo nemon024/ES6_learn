@@ -213,20 +213,81 @@
     menu.insertBefore(str1 ,menu.firstElementChild)
   
 6.Attribute methods
+  <input type="text" id="username" placeholder="username">
+
+  let inputBox= document.getElementById("username");
+  console.log(inputBox.attributes);
 
   1.getAttribute()
+    let inputBox= document.getElementById("username");
+    console.log(inputBox.getAttribute('type'));
+    console.log(inputBox.getAttribute('placeholder'));
+
   2.setAttribute()
+    let inputBox = document.getElementById("username");
+    inputBox.setAttribute("class", "user");
+    console.log(inputBox);
+
   3.hasAttribute()
+    let inputBox = document.getElementById("username");
+    console.log( inputBox.hasAttribute("class"));
+
   4.removeAttribute()
+    let inputBox = document.getElementById("username");
+    inputBox.removeAttribute('placeholder');
+    console.log(inputBox);
   
 7.Manipulating Element's Styles
 
   1.style property
+    <input type="text" id="username" placeholder="username" style="background-color: red; font-size: 20px;" />
+
+    let inputBox = document.getElementById("username");
+    console.log(inputBox.style);
+    console.log(inputBox.style.fontSize);
+    console.log(inputBox.style.backgroundColor);
+    inputBox.style.padding = "10px";
+    console.log(inputBox);
+
   2.cssText
+    // inputBox.style.cssText = "width:200px";//overright and apply the given input
+    inputBox.style.cssText += "width:200px; height:100px";// + this will add with the existing values
+    console.log(inputBox);
+
   3.getComputedStyle()
+   <style>
+      input{
+        background-color: red;
+        font-size: 12px;
+        width:300px ;
+      }
+    </style>
+
+    let inputBox = document.getElementById("username");
+    // syntax: window.getComputedStyle(element , pseudoElement)
+    console.log( window.getComputedStyle(inputBox).fontSize)
+    console.log( window.getComputedStyle(inputBox).backgroundColor)
+    console.log( window.getComputedStyle(inputBox).width)
+
   4.className property
+    <h1 id="title" class="main message">Naman</h1>
+
+    let title = document.getElementById("title");
+    // title.className = " new "//replace the exsiting class name with new one
+    title.className += " new ";
+    console.log(title);
+
   5.classList property
-  
+    <h1 id="title" class="main message">Naman</h1>
+
+    let title = document.getElementById("title");
+    title.classList.add("new","new2");
+    title.classList.remove("message", "main");
+    title.classList.replace("new", "msg");
+    console.log(title.classList.contains("msg"))//true
+    title.classList.toggle("new2")//id the given class name is availble then the toggle will remove it and if it not available it will add the givne class name
+    console.log(title);
+ 
 8.JavaScript Events
   
   1.What is event
