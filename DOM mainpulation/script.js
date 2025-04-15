@@ -1,7 +1,8 @@
 //JavaScript DOM Full Course - GreatStack
 
 /*
-1.what is DOM
+1.what is DOM -Document Object model 
+
 
 2.What is nodes and type of nodes
 
@@ -282,21 +283,85 @@
 
     let title = document.getElementById("title");
     title.classList.add("new","new2");
+
     title.classList.remove("message", "main");
+
     title.classList.replace("new", "msg");
+
     console.log(title.classList.contains("msg"))//true
+
     title.classList.toggle("new2")//id the given class name is availble then the toggle will remove it and if it not available it will add the givne class name
+
     console.log(title);
  
 8.JavaScript Events
-  
+
   1.What is event
+    An event handler is a piece of code that will be execute when the event occurs. Also know as event listener.
+
+    When the event occurs, the web broswer passed an Event object to the event handler.
+
+    onclick="console.log(event.type)"//click
+    onclick="console.log(event.target)"// whole tag from where it getting event
+
+    "this" keyword inside the event handler refer to target element.
+    onclick="console.log(this)"
+
+     let btn = document.getElementById('btn');
+    btn.onclick = null;//remove the event handler
+
   2.Event Bubbling & Event Captuting
   3.Event Handler in HTML Attributes
   4.DOM level 0 event handlers
   5.addEventListener()
+    add EventListener() method will register an event handler
+
+    syntax: addEventListener(event,function(){}, useCapture)//use capture is a bollean value true, false it is not nessary 
+
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+      console.log("button clicked");
+    })
+
+    let btn = document.getElementById('btn');
+    function displayMsg(){
+      console.log("button CLicked");
+    }
+
+    btn.addEventListener('click',displayMsg)
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+      console.log(event.type);
+    })//output: click
+
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+      console.log(this);
+    })//output: <button id="btn">Click me</button>
+
   6.removeEventListener()
+    removeEventListener() method will remove an event handler
+
+     btn.removeEventListener('click', displayMsg)
+
   7.Event Objects
   8.Different Types of Event
+    1.mousemove:Event fires repeatedly when you move the mouse cursor around the element 
+
+    2.mousedown:Event fires when you press the mouse button on the element
+
+    3.mouseup: Event fires when you release the mouse button on the element 
+
+    4.mouseover: Event fires when the cursor move from outside to inside the boundaries of the element
+
+    5.mouseout: Event fires when the cursor is over an element and then moves to another element.
+
+    6.keydown: Event fires when you press a key on the keyboard & fires repeatedly while you're holding down the key.
+    
+    7.keyup: Event fires when you release a key on the keyboard.
+
+    8.keypress: Event fires when you press a character on keyboard like a,b,c it fires repeatedly while you hold down the key on the keyboard.
+
+    9.Scroll: Event fires when you scroll a document or an element , the scroll events fire.
   */
 

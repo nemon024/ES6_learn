@@ -4,24 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      input {
-        background-color: red;
-        font-size: 12px;
-        width: 300px;
-      }
-    </style>
   </head>
   <body>
-    <h1 id="title" class="main message">Naman</h1>
+   <div id="container">
+    <button  id="btn">Click me</button>
+   </div>
     <script>
-      let title = document.getElementById("title");
-      title.classList.add("new","new2");
-      title.classList.remove("message", "main");
-      title.classList.replace("new", "msg");
-      console.log(title.classList.contains("msg"))//true
-      title.classList.toggle("new2")//id the given class name is availble then the toggle will remove it and if it not available it will add the givne class name
-      console.log(title);
+    let btn = document.getElementById('btn');
+    function displayMsg(){
+      console.log("button CLicked");
+      
+    }
+    btn.addEventListener('click',displayMsg)
+    btn.removeEventListener('click', displayMsg)
     </script>
   </body>
 </html>
