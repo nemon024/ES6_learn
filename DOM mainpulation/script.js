@@ -363,5 +363,7 @@
     8.keypress: Event fires when you press a character on keyboard like a,b,c it fires repeatedly while you hold down the key on the keyboard.
 
     9.Scroll: Event fires when you scroll a document or an element , the scroll events fire.
+
+    im getting headache today(just for contribution)
   */
 
